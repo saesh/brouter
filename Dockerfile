@@ -11,4 +11,5 @@ COPY --from=build /usr/src/app/brouter-server/target/brouter-server-1.5.5-jar-wi
 VOLUME /root/customprofiles
 VOLUME /root/profiles
 VOLUME /root/segments
+EXPOSE 17777
 CMD java -Xmx128M -Xms128M -Xmn8M -DmaxRunningTime=300 -cp app.jar btools.server.RouteServer segments profiles customprofiles 17777 1
