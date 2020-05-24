@@ -2,7 +2,7 @@ FROM maven:3-jdk-8 as build
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY . .
-RUN mvn clean package -pl brouter-server -am
+RUN mvn clean package -pl brouter-server -am -Dmaven.javadoc.skip=true
 
 FROM openjdk:8-jdk-alpine
 RUN apk --no-cache add ca-certificates
