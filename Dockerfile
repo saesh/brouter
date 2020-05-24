@@ -7,7 +7,7 @@ RUN mvn clean install -pl brouter-server -am
 FROM openjdk:8-jdk-alpine
 RUN apk --no-cache add ca-certificates
 WORKDIR /root/
-COPY --from=build /usr/src/app/brouter-server/target/brouter-server-1.5.5-jar-with-dependencies.jar app.jar
+COPY --from=build /usr/src/app/brouter-server/target/brouter-server-1.6.1-jar-with-dependencies.jar app.jar
 VOLUME /root/customprofiles
 VOLUME /root/profiles
 VOLUME /root/segments
